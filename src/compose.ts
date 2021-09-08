@@ -1,10 +1,10 @@
 import { COMPATIBILITY_TABLE } from "./constants";
 
-export function composeFromCompatArray(jamoArray: readonly string[][]) {
-    return jamoArray.map(letter => composeFromCompat(letter)).join('');
+export function compose(jamoArray: readonly string[][]) {
+    return jamoArray.map(letter => composeSingle(letter)).join('');
 }
 
-export function composeFromCompat(jamoArray: readonly string[]) {
+export function composeSingle(jamoArray: readonly string[]) {
     if (jamoArray.length === 1) return jamoArray[0];
 
     const indices = [0, 0, 0];

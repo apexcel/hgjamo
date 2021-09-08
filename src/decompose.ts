@@ -35,7 +35,7 @@ export function disassemble(code: number) {
     return ret;
 }
 
-export function decomposeToCompatJamo(hangul: string) {
+export function decompose(hangul: string) {
     const letters = hangul.split('');
     const [push, clear, getJamo] = useJamo();
     const result: string[][] = [];
@@ -67,14 +67,11 @@ export function decomposeToCompatJamo(hangul: string) {
                 result.push(getJamo());
                 clear();
             }
-            if (jamoNumber === 1) {
+            if (jamoNumber === 1 || jamoNumber === 3) {
                 push(CONSONANTS_TABLE[letter])
             }
             if (jamoNumber === 2) {
                 push(VOWEL_TABLE[letter]);
-            }
-            if (jamoNumber === 3) {
-                push(CONSONANTS_TABLE[letter])
             }
         }
     }

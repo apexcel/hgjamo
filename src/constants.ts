@@ -1,4 +1,6 @@
-import { TStringIndex } from "./@types";
+type TStringIndex = {
+    [key: string]: string;
+}
 
 const CONSONANTS_TABLE: TStringIndex = {
     // Inital consonants to compatibility consonants

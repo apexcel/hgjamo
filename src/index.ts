@@ -1,3 +1,2 @@
-import * as hgjamo from './modules';
-export default hgjamo;
-export * from './modules';
+export { decompose } from "./decompose"
+export { compose, composeSingle } from "./compose"

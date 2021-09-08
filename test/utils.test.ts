@@ -1,6 +1,6 @@
-import { hangulCompatibilityJamo, hangulJamo, isHangul, isHangulSyllables, toHex } from "../utils"
+import { hangulCompatibilityJamo, hangulJamo, isHangul, isHangulSyllables } from "../src/utils"
 
-describe('Utils Test', () => {
+describe('utils.ts test', () => {
 
     const initialConsonants = Array(19).fill(0).map((_, i) => String.fromCharCode(0x1100 + i));
     const medialVowels = Array(22).fill(0).map((_, i) => String.fromCharCode(0x1160 + i));
