@@ -26,7 +26,7 @@ hgjamo.decompose('한글') // [['ㅎ', 'ㅏ', 'ㄴ'], ['ㄱ', 'ㅡ', 'ㄹ']]
 hgjamo.composeSingle(['ㅎ', 'ㅏ', 'ㄴ']) // '한'
 ```
 
-### `compose(<string>)`
+### `compose(<string[][]>)`
 
 자모 이중 배열을 문자열로 반환
 
