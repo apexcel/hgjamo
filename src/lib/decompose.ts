@@ -1,4 +1,4 @@
-import { COMPATIBILITY_HANGUL_BEGIN, COMPATIBILITY_TABLE, CONSONANTS_TABLE, VOWEL_TABLE } from "./constants";
+import { HANGUL_SYLLABLES_BEGIN, COMPATIBILITY_TABLE, CONSONANTS_TABLE, VOWEL_TABLE } from "./constants";
 import { hangulJamo, isHangul, isHangulSyllables, hangulCompatibilityJamo } from "./utils";
 
 export function useJamo() {
@@ -21,9 +21,9 @@ export function useJamo() {
 }
 
 export function disassemble(code: number) {
-    const ii = Math.floor((code - COMPATIBILITY_HANGUL_BEGIN) / 588)
-        , mi = Math.floor((code - COMPATIBILITY_HANGUL_BEGIN - (ii * 588)) / 28)
-        , fi = (code - COMPATIBILITY_HANGUL_BEGIN - (ii * 588)) - (mi * 28);
+    const ii = Math.floor((code - HANGUL_SYLLABLES_BEGIN) / 588)
+        , mi = Math.floor((code - HANGUL_SYLLABLES_BEGIN - (ii * 588)) / 28)
+        , fi = (code - HANGUL_SYLLABLES_BEGIN - (ii * 588)) - (mi * 28);
 
     const is = COMPATIBILITY_TABLE[0][ii]
         , ms = COMPATIBILITY_TABLE[1][mi]
